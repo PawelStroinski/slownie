@@ -106,12 +106,13 @@
 
 (defn money
   [x & {:keys [currency decimal-places] :or {decimal-places 2}}]
-  (let [whole (bigint x)
+  (let [whole (abs (bigint x))
         base (Math/pow 10 decimal-places)
-        frac (abs (Math/round (* base (- x whole))))]
+        frac (Math/round (* base (- (abs x) whole)))
+        sign (if (neg? x) (str minus " ") "")]
     (if (string? currency)
-      (format "%s %s %d/%d" (in-words whole) currency frac (long base))
-      (str/join " " [(in-words whole)
-                     (flex (abs whole) whole-currency)
+      (format "%s%s %s %d/%d" sign (in-words whole) currency frac (long base))
+      (str/join " " [(str sign (in-words whole))
+                     (flex whole whole-currency)
                      (in-words frac)
                      (flex frac frac-currency)]))))

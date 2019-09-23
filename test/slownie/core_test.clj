@@ -50,9 +50,11 @@
   101.01 "sto jeden złotych jeden grosz"
   212 "dwieście dwanaście złotych zero groszy"
   -22.03 "minus dwadzieścia dwa złote trzy grosze"
+  -0.1 "minus zero złotych dziesięć groszy"
   (Math/pow 10 60) "jeden decylion złotych zero groszy"
   (- 0.01M (bigdec (Math/pow 10 63))) "minus dziewięćset dziewięćdziesiąt dziewięć decylionów dziewięćset dziewięćdziesiąt dziewięć noniliardów dziewięćset dziewięćdziesiąt dziewięć nonilionów dziewięćset dziewięćdziesiąt dziewięć oktyliardów dziewięćset dziewięćdziesiąt dziewięć oktylionów dziewięćset dziewięćdziesiąt dziewięć septyliardów dziewięćset dziewięćdziesiąt dziewięć septylionów dziewięćset dziewięćdziesiąt dziewięć sekstyliardów dziewięćset dziewięćdziesiąt dziewięć sekstylionów dziewięćset dziewięćdziesiąt dziewięć kwintyliardów dziewięćset dziewięćdziesiąt dziewięć kwintylionów dziewięćset dziewięćdziesiąt dziewięć kwadryliardów dziewięćset dziewięćdziesiąt dziewięć kwadrylionów dziewięćset dziewięćdziesiąt dziewięć tryliardów dziewięćset dziewięćdziesiąt dziewięć trylionów dziewięćset dziewięćdziesiąt dziewięć biliardów dziewięćset dziewięćdziesiąt dziewięć bilionów dziewięćset dziewięćdziesiąt dziewięć miliardów dziewięćset dziewięćdziesiąt dziewięć milionów dziewięćset dziewięćdziesiąt dziewięć tysięcy dziewięćset dziewięćdziesiąt dziewięć złotych dziewięćdziesiąt dziewięć groszy")
 
 (facts
   (money 1.02 :currency "FOO") => "jeden FOO 2/100"
+  (money -0.1 :currency "FOO") => "minus zero FOO 10/100"
   (money 1.234 :currency "FOO" :decimal-places 3) => "jeden FOO 234/1000")
