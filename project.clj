@@ -1,4 +1,4 @@
-(defproject slownie "1.0.0"
+(defproject slownie "1.0.1"
   :description "Convert numbers or money into words in the Polish language."
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
